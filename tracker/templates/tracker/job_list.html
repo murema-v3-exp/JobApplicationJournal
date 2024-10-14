@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Tracker</title>
+</head>
+<body>
+    <h1>Job Applications</h1>
+    <ul>
+        {% for job in jobs %}
+        <li>{{ job.job_title }} at {{ job.company_name }} - Status: {{ job.status }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_job' %}">Add New Job Application</a>
+</body>
+</html>
+
