@@ -1,16 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Add Job Application</title>
-</head>
-<body>
-    <h1>Add Job Application</h1>
+{% extends "tracker/base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Add Job</h1>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
+        <div>
+            <label for="title">Job Title:</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        <div>
+            <label for="company">Company:</label>
+            <input type="text" id="company" name="company" required>
+        </div>
+        <div>
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+        </div>
+        <div>
+            <label for="date_posted">Date Posted:</label>
+            <input type="date" id="date_posted" name="date_posted" required>
+        </div>
+        <div>
+            <label for="job_description">Job Description:</label>
+            <textarea id="job_description" name="job_description" required></textarea>
+        </div>
+        <button type="submit" class="btn">Add Job</button>
     </form>
-    <a href="{% url 'job_list' %}">Back to Job List</a>
-</body>
-</html>
-
+    <a href="{% url 'job_list' %}" class="btn">Back to Job List</a>
+</div>
+{% endblock %}

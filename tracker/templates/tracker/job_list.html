@@ -1,16 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Tracker</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+
 </head>
 <body>
-    <h1>Job Applications</h1>
-    <ul>
-        {% for job in jobs %}
-        <li>{{ job.job_title }} at {{ job.company_name }} - Status: {{ job.status }}</li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'add_job' %}">Add New Job Application</a>
+
+    <div class = "container">
+        <h1>Job Application Tracker</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Company</th>
+                    <th>Position</th>
+                    <th>Status</th>
+                    <th>Applied On</th>
+                </tr> 
+            </thead>
+            <tbody> 
+                {% for job in jobs %}
+                <tr>
+                    <td>{{ job.company_name }}</td>
+                    <td>{{ job.job_title }}</td>
+                    <td>{{ job.status }}</td>
+                    <td>{{ job.application_date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    
+        <a href="{% url 'add_job' %}" class="btn">Add New Job Application</a>
+
+
+    </div>
 </body>
 </html>
 
