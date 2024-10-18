@@ -1,6 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import JobApplication
 from .forms import JobApplicationForm
+from .forms import UpdateStatusForm
 
 
 # Create your views here.
@@ -21,3 +22,18 @@ def add_job(request):
     else:
         form = JobApplicationForm()
     return render(request, 'tracker/add_job.html', {'form': form})
+
+def update_status(request, application_id):
+    application = get_object_or_404(JobApplication, id=application_id)
+    if request.method == 'POST':
+        form = UpdateStatusForm(request.POST, instance=application)
+        if form.is_valid():
+            form.save()
+            return redirect('application_detail', pk=application.pk)  # Redirect after saving
+    else:
+        form = UpdateStatusForm(instance=application)
+    return render(request, 'tracker/update_status.html', {'form': form, 'application':application})
+
+def application_detail(request, pk):
+    application = get_object_or_404(JobApplication, pk=pk)
+    return render(request, 'tracker/application_detail.html', {'application': application})

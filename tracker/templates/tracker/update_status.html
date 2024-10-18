@@ -1,0 +1,28 @@
+<!-- templates/tracker/update_status.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Application Status</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'tracker/style.css' %}"> 
+</head>
+<body>
+    <div class="container">
+        <h2>Update Status for {{ application.job_title }} at {{ application.company }}</h2>
+        
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="status">Current Status</label>
+                {{ form.status }}
+            </div>
+            <button type="submit" class="btn btn-primary">Update Status</button>
+        </form>
+        
+        
+        <a href="{% url 'application_detail' application.id %}">Back to Application Details</a>
+    </div>
+</body>
+</html>

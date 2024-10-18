@@ -5,3 +5,9 @@ class JobApplicationForm (forms.ModelForm):
     class Meta:
         model = JobApplication
         fields = ["company_name", "job_title", "application_date", "status"]
+
+
+class UpdateStatusForm(forms.ModelForm):
+    class Meta:
+        model = JobApplication
+        fields = ['status']

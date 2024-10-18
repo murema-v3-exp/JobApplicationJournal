@@ -6,14 +6,10 @@
     <title>Job Tracker</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-
-
 </head>
 <body>
-
-    <div class = "container">
+    <div class="container">
         <h1>Job Application Tracker</h1>
-
         <table>
             <thead>
                 <tr>
@@ -21,25 +17,27 @@
                     <th>Position</th>
                     <th>Status</th>
                     <th>Applied On</th>
+                    <th>Actions</th>
                 </tr> 
             </thead>
             <tbody> 
                 {% for job in jobs %}
                 <tr>
-                    <td>{{ job.company_name }}</td>
+                    <td>{{ job.company_name }}</a></td>
                     <td>{{ job.job_title }}</td>
                     <td>{{ job.status }}</td>
                     <td>{{ job.application_date }}</td>
+
+                    <td>
+                        <a href="{% url 'application_detail' job.id %}" class="btn no-link-style">View Details</a>
+
+                        <a href="{% url 'update_status' job.id %}" class="btn no-link-style">Update Status</a>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
-
-    
         <a href="{% url 'add_job' %}" class="btn">Add New Job Application</a>
-
-
     </div>
 </body>
 </html>
-

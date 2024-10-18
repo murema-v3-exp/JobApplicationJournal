@@ -64,3 +64,39 @@ tr:hover {
         padding: 8px;
     }
 }
+
+
+/* for add_job */
+
+input[type="text"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #415A77; /* Border color */
+    border-radius: 5px;
+    background-color: #1B263B; /* Input background color */
+    color: #E0E1DD; /* Input text color */
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+textarea:focus {
+    border-color: #2EC4B6; /* Focus border color */
+    outline: none;
+}
+
+label {
+    color: #E0E1DD; /* Label text color */
+    display: block; /* Ensures labels are above inputs */
+    margin-bottom: 5px;
+}
+
+/* Styles for making links look like regular text */
+.no-link-style {
+    text-decoration: none;
+    color: inherit; /* Makes the link inherit the text color */
+    cursor: pointer;
+}
