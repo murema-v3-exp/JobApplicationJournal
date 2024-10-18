@@ -19,12 +19,14 @@ def add_job(request):
         if form.is_valid():
             form.save()
             return redirect('job_list')
+        else:
+            print(form.errors)
     else:
         form = JobApplicationForm()
     return render(request, 'tracker/add_job.html', {'form': form})
 
-def update_status(request, application_id):
-    application = get_object_or_404(JobApplication, id=application_id)
+def update_status(request, pk):
+    application = get_object_or_404(JobApplication, id=pk)
     if request.method == 'POST':
         form = UpdateStatusForm(request.POST, instance=application)
         if form.is_valid():

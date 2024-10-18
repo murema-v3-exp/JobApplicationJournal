@@ -2,29 +2,58 @@
 
 {% block content %}
 <div class="container">
-    <h1>Add Job</h1>
+    <h1>Add Job Application</h1>
     <form method="post">
         {% csrf_token %}
+        
         <div>
-            <label for="title">Job Title:</label>
-            <input type="text" id="title" name="title" required>
+            <label for="id_company_name">Company:</label>
+            {{ form.company_name }}  <!-- Django form field for company name -->
+            {% if form.company_name.errors %}
+                <ul class="errorlist">
+                    {% for error in form.company_name.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
         </div>
+        
         <div>
-            <label for="company">Company:</label>
-            <input type="text" id="company" name="company" required>
+            <label for="id_job_title">Job Title:</label>
+            {{ form.job_title }}  <!-- Django form field for job title -->
+            {% if form.job_title.errors %}
+                <ul class="errorlist">
+                    {% for error in form.job_title.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
         </div>
+
         <div>
-            <label for="location">Location:</label>
-            <input type="text" id="location" name="location" required>
+            <label for="id_application_date">Date Posted:</label>
+            {{ form.application_date }}  <!-- Django form field for application date -->
+            {% if form.application_date.errors %}
+                <ul class="errorlist">
+                    {% for error in form.application_date.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
         </div>
+        
         <div>
-            <label for="date_posted">Date Posted:</label>
-            <input type="date" id="date_posted" name="date_posted" required>
+            <label for="id_status">Status:</label>
+            {{ form.status }}  <!-- Django form field for status -->
+            {% if form.status.errors %}
+                <ul class="errorlist">
+                    {% for error in form.status.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
         </div>
-        <div>
-            <label for="job_description">Job Description:</label>
-            <textarea id="job_description" name="job_description" required></textarea>
-        </div>
+
         <button type="submit" class="btn">Add Job</button>
     </form>
     <a href="{% url 'job_list' %}" class="btn">Back to Job List</a>

@@ -8,6 +8,8 @@ class JobApplication(models.Model):
     application_date = models.DateField()
     status = models.CharField(max_length=50, choices=[
         ('Pending', 'Pending'),
+        ("Action Required", "Action Required"),
+        ("Under Review", "Under Review"),
         ('Interview', 'Interview'),
         ('Rejected', 'Rejected'),
         ('Accepted', 'Accepted')
