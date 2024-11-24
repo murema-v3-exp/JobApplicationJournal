@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Application Details</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    <h1>Application Details for Job ID: {{ application.id }}</h1>
-    <p><strong>Job Title:</strong> {{ application.job_title }}</p>
-    <p><strong>Company:</strong> {{ application.company }}</p>
-    <p><strong>Status:</strong> {{ application.status }}</p>
-    <p><strong>Date Applied:</strong> {{ application.date_applied }}</p>
-
+    <div class="container">
+    <h1>Application Details</h1>
+    <div class="details">
+        <p><strong>Job Title:</strong> {{ application.job_title }}</p>
+        <p><strong>Company:</strong> {{ application.company_name }}</p>
+        <p><strong>Status:</strong> {{ application.status }}</p>
+        <p><strong>Date Applied:</strong> {{ application.application_date }}</p>
+    </div>
     <a href="{% url 'job_list' %}" class="btn">Back to Job List</a>
+    </div>
 </body>
 </html>

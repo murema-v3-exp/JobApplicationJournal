@@ -1,23 +1,25 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #0D1B2A; /* Dark background */
-    color: #E0E1DD; /* Light text color */
+    background-color: #0D1B2A; 
+    color: #E0E1DD; 
 }
 
 .container {
     width: 80%;  
     margin: 20px auto;
     padding: 20px;
-    background-color: #1B263B; /* Darker container background */
+    background-color: #1B263B; 
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-h1 {
+h1, h2 {
     text-align: center;
-    color: #778DA9; /* Heading color */
+    color: #778DA9; 
+    margin-bottom: 20px;
 }
 
+/* Tables */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -43,6 +45,7 @@ tr:hover {
     background-color: #778DA9; /* Hover effect color */
 }
 
+/* Buttons */
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -52,16 +55,28 @@ tr:hover {
     text-decoration: none;
     border-radius: 5px;
     text-align: center;
+    border: none;
+    cursor: pointer;
 }
 
 .btn:hover {
     background-color: #0056b3; /* Button hover effect */
 }
 
+/* Responsiveness */
 @media only screen and (max-width: 600px) {
-    .styled-table, .styled-table th, .styled-table td {
-        font-size: 12px;
+    input, select, textarea {
+        font-size: 14px;
         padding: 8px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    a {
+        font-size: 14px;
     }
 }
 
@@ -98,5 +113,35 @@ label {
 .no-link-style {
     text-decoration: none;
     color: inherit; /* Makes the link inherit the text color */
+    cursor: pointer;
+}
+
+
+/*  for UPDATE STATUS  */
+form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Links */
+a {
+    display: block;
+    margin-top: 15px;
+    color: #778DA9;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+}
+
+a:hover {
+    color: #2EC4B6;
+}
+
+a.no-link-style {
+    text-decoration: none;
+    color: inherit; /* Keeps the link styled like text */
     cursor: pointer;
 }
