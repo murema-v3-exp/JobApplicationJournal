@@ -5,6 +5,9 @@ from .forms import UpdateStatusForm
 
 
 # Create your views here.
+
+def landing_page(request):
+    return render(request, 'tracker/landing_page.html')
     
 def job_list(request):
     # List all job applications

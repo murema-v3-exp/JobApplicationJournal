@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Tracker</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to the Job Tracker!</h1>
+
+        <p>This is your one-stop shop to keep track of all those applications you’ve been sending out. No more scrambling to remember which companies you’ve applied to or what the next step is. Just log it here and stay on top of your game!</p>
+        
+        <div class="cta">
+            <p>Ready to get started?</p>
+            <a href="{% url 'job_list' %}" class="btn">Back to Job List</a>
+        </div>
+
+        <div class="features">
+            <h3>Features:</h3>
+            <ul>
+                <li><strong>Track everything:</strong> Companies, positions, dates. No more chaos!</li>
+                <li><strong>Stay organized:</strong> Quickly see your application statuses and updates.</li>
+                <li><strong>Easy to use:</strong> It’s just a few clicks away, and you’re in control.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

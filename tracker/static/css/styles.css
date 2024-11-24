@@ -145,3 +145,53 @@ a.no-link-style {
     color: inherit; /* Keeps the link styled like text */
     cursor: pointer;
 }
+
+
+
+/* for LANDING-PAGE */
+.cta {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.cta p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.cta .btn {
+    padding: 12px 25px;
+    background-color: #2EC4B6; /* Button background */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+.cta .btn:hover {
+    background-color: #0056b3; /* Button hover effect */
+}
+
+/* Features Section */
+.features {
+    background-color: #415A77;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.features ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.features li {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.features h2 {
+    text-align: center;
+    color: #E0E1DD;
+}
